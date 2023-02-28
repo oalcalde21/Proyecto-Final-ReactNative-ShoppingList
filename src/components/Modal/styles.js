@@ -47,4 +47,7 @@ export const styles = StyleSheet.create({
   buttonDelete: {
     backgroundColor: "#f44336",
   },
+  buttonReady: {
+    backgroundColor: "green",
+  },
   });

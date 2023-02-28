@@ -21,4 +21,20 @@ export const styles = StyleSheet.create({
     padding: 5,
     margin: 5,
   },
+  titleContainer: {
+    position: "absolute",
+    bottom: 0,
+    left: 70,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-end",
+    marginBottom: 10,
+    bottom: 0,
+  },
+  title:{
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: 15,
+    padding: 5,
+  },
   });

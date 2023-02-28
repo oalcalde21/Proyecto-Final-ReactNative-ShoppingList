@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import React from "react";
 import {styles} from './styles'
 
-const Modal = ({modalVisible, selectedItem, onCancelModal, onDeleteModal}) => {
+const Modal = ({modalVisible, selectedItem, onCancelModal, onDeleteModal, onPaintModal}) => {
   return (
     <>
     <RNmodal animationType="slide" transparent={true} visible={modalVisible}>
