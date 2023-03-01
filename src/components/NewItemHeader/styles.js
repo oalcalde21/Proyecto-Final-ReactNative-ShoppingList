@@ -26,6 +26,9 @@ export const styles = StyleSheet.create({
     transform: [{ scale: 1.1 }],
     backgroundColor: '#1766a6',
   },
+  buttonDisabled: {
+    backgroundColor: '#ccc',
+  },
   text:{
     color: 'white',
   }
