@@ -1,11 +1,30 @@
+import * as Font from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+
 import { ItemList, ItemStatusColor, Modal, NewItemHeader } from "./src/components";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Logo from "./src/components/Logo/Logo";
 import {styles} from './styles';
+import { useFonts } from 'expo-font';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+
+  // Fonts
+  const [fontsLoaded] = useFonts({
+    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
   const [itemText, setItemText] = useState("");
   const [items, setItems] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -56,8 +75,14 @@ export default function App() {
     setIsPressed(false);
   };
 
+  // Esta parte es para que no se vea el splash screen hasta que se carguen las fuentes
+  // Va siempre al final y antes del return
+  if (!fontsLoaded) {
+    return null;
+  }
+  
   return (
-    <View style={styles.screen}>
+    <View style={styles.screen} onLayout={onLayoutRootView}>
       {/* ADDITEM COMPONENT */}
       <Logo/>
       <NewItemHeader onChangeText={onChangeText} itemText={itemText} addItemToState={addItemToState} onPressIn={handlePressIn} OnPressOut={handlePressOut} isPressed={isPressed}/>

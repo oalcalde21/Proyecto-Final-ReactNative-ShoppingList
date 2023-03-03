@@ -32,9 +32,13 @@ export const styles = StyleSheet.create({
     bottom: 0,
   },
   title:{
-    justifyContent: "center",
-    alignItems: "center",
     fontSize: 15,
     padding: 5,
+    fontFamily: "Poppins-Regular",
+    justifyContent: "center",
+    alignItems: "center",
   },
+  text:{
+    fontFamily: "Poppins-Regular",
+  }
   });

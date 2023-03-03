@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     width: 200,
     borderBottomColor: "black",
     borderBottomWidth: 1,
+    fontFamily: "Poppins-Regular",
   },
   button: {
     justifyContent: 'center',
@@ -31,5 +32,6 @@ export const styles = StyleSheet.create({
   },
   text:{
     color: 'white',
+    fontFamily: "Poppins-Regular",
   }
   });
