@@ -12,14 +12,6 @@ const ItemStatusColor = () => {
         <View style={styles.greenContainer}/>
         <Text style={styles.text}>Listo</Text>
     </View>
-    <View style={styles.titleContainer}>
-      <View >
-        <Text style={styles.title}>Presionar para marcar como listo</Text>
-      </View>
-      <View>
-        <Text style={styles.title}>Presionar 2 veces para eliminar</Text>
-      </View>
-    </View>
     </>
   );
 };

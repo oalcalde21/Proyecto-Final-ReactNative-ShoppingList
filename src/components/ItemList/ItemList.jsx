@@ -7,10 +7,11 @@ import {styles} from './styles'
 const ItemList = ({ items, openModal }) => {
   return (
     <>
-    <FlatList data={items} renderItem={(itemData) => {
+    <FlatList data={items} style={styles.container} renderItem={(itemData) => {
         return <Item itemData={itemData} openModal={openModal} />;
       }}
       keyExtractor={(item) => item.id.toString()}
+      nestedScrollEnabled={true}
     />
     </>
   );

@@ -1,36 +1,19 @@
-import Colors from '../../constants/Colors'
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
+    width: '100%',
+    paddingVertical: 8,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 10,
   },
-  redContainer:{
-    width: 20,
-    height: 20,
-    backgroundColor: Colors.Pending,
-    padding: 5,
-    margin: 5,
-  },
-  greenContainer:{
-    width: 20,
-    height: 20,
-    backgroundColor: Colors.Ready,
-    padding: 5,
-    margin: 5,
-  },
   titleContainer: {
-    position: "absolute",
-    bottom: 0,
-    left: 70,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-end",
     marginBottom: 10,
-    bottom: 0,
   },
   title:{
     fontSize: 15,
@@ -39,7 +22,4 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  text:{
-    fontFamily: "Poppins-Regular",
-  }
   });

@@ -1,3 +1,4 @@
+import Colors from '../../constants/Colors'
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -8,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: Colors.Background,
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
@@ -42,12 +43,9 @@ export const styles = StyleSheet.create({
   },
 
   buttonCancel: {
-    backgroundColor: "#2196F3",
+    backgroundColor: Colors.Cancel,
   },
   buttonDelete: {
-    backgroundColor: "#f44336",
-  },
-  buttonReady: {
-    backgroundColor: "green",
+    backgroundColor: Colors.Delete,
   },
   });

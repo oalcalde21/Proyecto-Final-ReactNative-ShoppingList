@@ -1,7 +1,7 @@
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-import { ItemList, ItemStatusColor, Modal, NewItemHeader } from "./src/components";
+import { Footer, ItemList, ItemStatusColor, KeyboardAvoidingView, Modal, NewItemHeader } from "./src/components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
@@ -27,6 +27,7 @@ export default function App() {
 
   const [itemText, setItemText] = useState("");
   const [items, setItems] = useState([]);
+  const [deletedItems, setDeletedItems] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -50,6 +51,18 @@ export default function App() {
     console.log("addItemToState - end", "items", newArr);
   };
 
+  const addDeletedItemToState = (item) => {
+    console.log("addItemToState - start SIN JSON", items, itemText);
+    console.log(
+      "addDeleteItemToState - start CON JSON",
+      JSON.stringify({ items, itemText })
+    );
+    const newArr = [...deletedItems, { id: Date.now(), value: item.value }];
+    setDeletedItems(newArr);
+    console.log("addDeletedItemToState - end", "items", newArr);
+  };
+
+
   const openModal = (item) => {
     setSelectedItem(item);
     setModalVisible(true);
@@ -59,9 +72,10 @@ export default function App() {
     setModalVisible(!modalVisible);
   };
 
-  const onDeleteModal = (id) => {
+  const onDeleteModal = (id, item) => {
     setModalVisible(!modalVisible);
     setItems((oldArry) => oldArry.filter((item) => item.id !== id));
+    addDeletedItemToState(item);
     setSelectedItem(null);
   };
 
@@ -82,15 +96,18 @@ export default function App() {
   }
   
   return (
-    <View style={styles.screen} onLayout={onLayoutRootView}>
-      {/* ADDITEM COMPONENT */}
-      <Logo/>
-      <NewItemHeader onChangeText={onChangeText} itemText={itemText} addItemToState={addItemToState} onPressIn={handlePressIn} OnPressOut={handlePressOut} isPressed={isPressed}/>
-      {/* LIST COMPONENT */}
-      <ItemStatusColor/>
-      <ItemList items={items} openModal={openModal} />
-      {/* MODAl COMPONENT */}
-      <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
-    </View>
+    <>
+      <View style={styles.screen} onLayout={onLayoutRootView}>
+        {/* ADDITEM COMPONENT */}
+        <Logo/>
+        <NewItemHeader onChangeText={onChangeText} itemText={itemText} addItemToState={addItemToState} onPressIn={handlePressIn} OnPressOut={handlePressOut} isPressed={isPressed}/>
+        {/* LIST COMPONENT */}
+        <ItemStatusColor/>
+        <ItemList items={items} openModal={openModal} />
+        {/* MODAl COMPONENT */}
+        <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
+        <Footer/>
+      </View>
+    </>
   );
 }

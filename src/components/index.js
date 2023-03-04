@@ -1,3 +1,4 @@
+import Footer from "./Footer/Footer";
 import ItemList from "./ItemList/ItemList";
 import ItemStatusColor from "./ItemStatusColor/ItemStatusColor";
 import Modal from "./Modal/Modal";
@@ -8,4 +9,5 @@ export {
     ItemList,
     Modal,
     ItemStatusColor,
+    Footer,
 }

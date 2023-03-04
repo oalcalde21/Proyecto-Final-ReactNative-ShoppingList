@@ -18,7 +18,7 @@ const Modal = ({modalVisible, selectedItem, onCancelModal, onDeleteModal}) => {
           <View style={styles.modalActions}>
             <Button styleButtonType={styles.buttonCancel} title="Cancelar" onPress={onCancelModal}/>
             <Button styleButtonType={styles.buttonDelete} title="Eliminar" onPress={() => {
-                onDeleteModal(selectedItem.id);
+                onDeleteModal(selectedItem.id, selectedItem);
               }}
             />
           </View>
