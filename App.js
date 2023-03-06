@@ -1,11 +1,13 @@
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-import { Footer, ItemList, ItemStatusColor, KeyboardAvoidingView, Modal, NewItemHeader } from "./src/components";
+import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, KeyboardAvoidingView, Modal, NewItemHeader } from "./src/components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
+import DeletedItemsPage from './src/screens/DeletedItemsPage';
 import Logo from "./src/components/Logo/Logo";
+import StartPage from './src/screens/StartPage';
 import {styles} from './styles';
 import { useFonts } from 'expo-font';
 
@@ -25,87 +27,29 @@ export default function App() {
     }
   }, [fontsLoaded]);
 
+  const [deletedScreen, setDeletedScreen] = useState(false);
+  const [deletedItems, setDeletedItems] = useState([]);
   const [itemText, setItemText] = useState("");
   const [items, setItems] = useState([]);
-  const [deletedItems, setDeletedItems] = useState([]);
-  const [modalVisible, setModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const onChangeText = (text) => {
-    setItemText(text);
+  
+  const handleDeletedscreen = () => {
+    if (deletedScreen === false) {
+      setDeletedScreen(true);
+    } else {
+      setDeletedScreen(false);
+    }
   };
-
-  useEffect(() => {
-    console.log("useEffect", "itemText", itemText, "ITEMS", items);
-  }, []);
-
-  const addItemToState = () => {
-    console.log("addItemToState - start SIN JSON", items, itemText);
-    console.log(
-      "addItemToState - start CON JSON",
-      JSON.stringify({ items, itemText })
-    );
-    const newArr = [...items, { id: Date.now(), value: itemText }];
-    setItems(newArr);
-    setItemText("");
-    console.log("addItemToState - end", "items", newArr);
-  };
-
-  const addDeletedItemToState = (item) => {
-    console.log("addItemToState - start SIN JSON", items, itemText);
-    console.log(
-      "addDeleteItemToState - start CON JSON",
-      JSON.stringify({ items, itemText })
-    );
-    const newArr = [...deletedItems, { id: Date.now(), value: item.value }];
-    setDeletedItems(newArr);
-    console.log("addDeletedItemToState - end", "items", newArr);
-  };
-
-
-  const openModal = (item) => {
-    setSelectedItem(item);
-    setModalVisible(true);
-  };
-
-  const onCancelModal = () => {
-    setModalVisible(!modalVisible);
-  };
-
-  const onDeleteModal = (id, item) => {
-    setModalVisible(!modalVisible);
-    setItems((oldArry) => oldArry.filter((item) => item.id !== id));
-    addDeletedItemToState(item);
-    setSelectedItem(null);
-  };
-
-  const [isPressed, setIsPressed] = useState(false);
-
-  const handlePressIn = () => {
-    setIsPressed(true);
-  };
-
-  const handlePressOut = () => {
-    setIsPressed(false);
-  };
-
-  // Esta parte es para que no se vea el splash screen hasta que se carguen las fuentes
-  // Va siempre al final y antes del return
-  if (!fontsLoaded) {
-    return null;
-  }
   
   return (
     <>
       <View style={styles.screen} onLayout={onLayoutRootView}>
         {/* ADDITEM COMPONENT */}
         <Logo/>
-        <NewItemHeader onChangeText={onChangeText} itemText={itemText} addItemToState={addItemToState} onPressIn={handlePressIn} OnPressOut={handlePressOut} isPressed={isPressed}/>
-        {/* LIST COMPONENT */}
-        <ItemStatusColor/>
-        <ItemList items={items} openModal={openModal} />
-        {/* MODAl COMPONENT */}
-        <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
+        {
+        !deletedScreen
+          ? <StartPage handleDeletedscreen={handleDeletedscreen} deletedScreen={deletedScreen} items={items} setItems={setItems} itemText={itemText} setItemText={setItemText} />
+          : <DeletedItemsPage items={deletedItems} openModal={openModal} deletedItems={deletedItems} setDeletedItems={setDeletedItems} />
+        }
         <Footer/>
       </View>
     </>

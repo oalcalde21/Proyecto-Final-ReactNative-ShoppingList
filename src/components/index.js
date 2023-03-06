@@ -1,3 +1,4 @@
+import ButtonDeletedItems from "./ButtonDeletedItems/ButtonDeletedItems";
 import Footer from "./Footer/Footer";
 import ItemList from "./ItemList/ItemList";
 import ItemStatusColor from "./ItemStatusColor/ItemStatusColor";
@@ -10,4 +11,5 @@ export {
     Modal,
     ItemStatusColor,
     Footer,
+    ButtonDeletedItems,
 }
