@@ -102,12 +102,11 @@ export default function App() {
     }
   
   const handleDeletedScreen = () => {
-    console.log(deletedScreen)
-    // if (deletedScreen === false) {
-    //   setDeletedScreen(true);
-    // } else {
-    //   setDeletedScreen(false);
-    // }
+    if (deletedScreen === false) {
+      setDeletedScreen(true);
+    } else {
+      setDeletedScreen(false);
+    }
   };
 
   
