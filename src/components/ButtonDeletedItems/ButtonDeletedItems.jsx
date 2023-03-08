@@ -3,7 +3,8 @@ import { Pressable, StyleSheet, Text } from "react-native";
 import React from "react";
 import {styles} from './styles'
 
-const ButtonDeletedItems = (handleDeletedScreen) => {
+const ButtonDeletedItems = (handleDeletedScreen, deletedScreen) => {
+  console.log(deletedScreen);
   return (
     <>
     <Pressable style={[styles.button]} onPress={handleDeletedScreen}>

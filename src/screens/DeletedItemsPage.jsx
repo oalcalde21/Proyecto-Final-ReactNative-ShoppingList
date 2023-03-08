@@ -11,29 +11,17 @@ import { useFonts } from 'expo-font';
 
 SplashScreen.preventAutoHideAsync();
 
-const DeletedItemsPage = ({handleDeletedscreen, deletedScreen}) => {
-
-  // Fonts
-  const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('../../assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('../../assets/fonts/Poppins-Bold.ttf'),
-  });
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-  
-  // Esta parte es para que no se vea el splash screen hasta que se carguen las fuentes
-  // Va siempre al final y antes del return
-  if (!fontsLoaded) {
-    return null;
-  }
+const DeletedItemsPage = ({
+  deletedItems, 
+  openModal, 
+  modalVisible, 
+  selectedItem, 
+  onCancelModal, 
+  onDeleteModal}) => {
   
   return (
     <>
-      <View style={styles.screen} onLayout={onLayoutRootView}>
+      <View style={styles.screen}>
         {/* LIST COMPONENT */}
         <ItemList items={deletedItems} openModal={openModal} />      
         {/* MODAl COMPONENT */}
