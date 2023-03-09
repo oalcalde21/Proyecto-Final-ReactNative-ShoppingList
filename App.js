@@ -63,13 +63,13 @@ export default function App() {
         "addDeleteItemToState - start CON JSON",
         JSON.stringify({ items, itemText })
       );
-      const newArr = [...deletedItems, { id: Date.now(), value: item.value }];
-      setDeletedItems(newArr);
-      console.log("addDeletedItemToState - end", "items", newArr);
-      console.log(deletedScreen)
+        const newArr = [...deletedItems, { id: Date.now(), value: item.value }];
+        setDeletedItems(newArr);
+        console.log("addDeletedItemToState - end", "items", newArr);
+        console.log(deletedScreen)
     };
     
-     const openModal = (item) => {
+    const openModal = (item) => {
       setSelectedItem(item);
       setModalVisible(true);
     };
