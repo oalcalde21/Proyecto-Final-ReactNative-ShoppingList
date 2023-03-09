@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text } from "react-native";
 import React from "react";
 import {styles} from './styles'
 
-const ButtonDeletedItems = (handleDeletedScreen) => {
+const ButtonHome = ({handleDeletedScreen, deletedScreen}) => {
   return (
     <>
     <Pressable style={[styles.button]} onPress={handleDeletedScreen}>
@@ -13,4 +13,4 @@ const ButtonDeletedItems = (handleDeletedScreen) => {
   );
 };
 
-export default ButtonDeletedItems;
+export default ButtonHome;

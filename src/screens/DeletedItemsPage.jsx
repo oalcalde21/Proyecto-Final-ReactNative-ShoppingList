@@ -1,7 +1,7 @@
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
+import { ButtonDeletedItems, ButtonHome, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
@@ -12,6 +12,7 @@ import { useFonts } from 'expo-font';
 SplashScreen.preventAutoHideAsync();
 
 const DeletedItemsPage = ({
+  handleDeletedScreen,
   deletedItems, 
   openModal, 
   modalVisible, 
@@ -26,6 +27,7 @@ const DeletedItemsPage = ({
         <ItemList items={deletedItems} openModal={openModal} />      
         {/* MODAl COMPONENT */}
         <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
+        <ButtonHome handleDeletedScreen={handleDeletedScreen}/>
       </View>
     </>
   );

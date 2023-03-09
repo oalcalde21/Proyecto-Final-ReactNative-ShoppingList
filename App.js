@@ -140,6 +140,7 @@ export default function App() {
             openModal={openModal}
             onChangeText={onChangeText} />
           : <DeletedItemsPage 
+            handleDeletedScreen={handleDeletedScreen}
             deletedItems={deletedItems}
             openModal={openModal} 
             modalVisible={modalVisible} 
