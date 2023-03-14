@@ -8,6 +8,7 @@ const ButtonDeletedItems = ({handleDeletedScreen, deletedScreen}) => {
   return (
     <>
     <Pressable style={[styles.button]} onPress={handleDeletedScreen}>
+    {/* <Pressable style={[styles.button]} onPress={() => navigation.navigate('DeletedItems')}> */}
       <Text style={[styles.text]}>Ver Elementos Eliminados</Text>
     </Pressable>
     </>
