@@ -2,14 +2,15 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
 import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, KeyboardAvoidingView, Modal, NewItemHeader } from "./src/components";
+import { Poppins_Bold, Poppins_Regular, useFonts } from 'expo-font';
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
+import AppNavigator from './src/navigation';
 import DeletedItemsPage from './src/screens/DeletedItemsPage';
 import Logo from "./src/components/Logo/Logo";
 import StartPage from './src/screens/StartPage';
 import {styles} from './styles';
-import { useFonts } from 'expo-font';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -148,6 +149,7 @@ export default function App() {
             onCancelModal={onCancelModal}
             onDeleteModal={onDeleteModal} />
         }
+        <AppNavigator/>
         <Footer/>
       </View>
     </>
