@@ -1,6 +1,6 @@
-import DeletedItemsPage  from "../components/screens/DeletedItemsPage";
+import DeletedItemsPage from '../screens/DeletedItemsPage';
 import React from "react";
-import StartPage  from "../components/screens/StartPage";
+import StartPage  from "../screens/StartPage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();

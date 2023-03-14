@@ -149,7 +149,7 @@ export default function App() {
             onCancelModal={onCancelModal}
             onDeleteModal={onDeleteModal} />
         }
-        <AppNavigator/>
+        {/* <AppNavigator/> */}
         <Footer/>
       </View>
     </>
