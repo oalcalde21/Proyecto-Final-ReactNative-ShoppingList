@@ -7,6 +7,7 @@ const ButtonHome = ({handleDeletedScreen, deletedScreen}) => {
   return (
     <>
     <Pressable style={[styles.button]} onPress={handleDeletedScreen}>
+    {/* <Pressable style={[styles.button]} onPress={() => navigation.navigate('Home')}> */}
       <Text style={[styles.text]}>Home</Text>
     </Pressable>
     </>
