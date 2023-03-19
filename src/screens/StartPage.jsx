@@ -1,14 +1,8 @@
-import * as Font from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-
 import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Logo from "../components/Logo/Logo";
-import { useFonts } from 'expo-font';
-
-SplashScreen.preventAutoHideAsync();
 
 const StartPage = () => {
 

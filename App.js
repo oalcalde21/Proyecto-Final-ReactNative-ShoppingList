@@ -35,39 +35,7 @@ export default function App() {
   
   return (
     <>
-        {/* {
-        !deletedScreen
-          ? <StartPage 
-            handleDeletedScreen={handleDeletedScreen}
-            deletedScreen={deletedScreen} 
-            deletedItems={deletedItems} 
-            setDeletedItems={setDeletedItems} 
-            items={items} 
-            setItems={setItems}
-            itemText={itemText} 
-            setItemText={setItemText}
-            addItemToState={addItemToState}
-            handlePressIn={handlePressIn}
-            handlePressOut={handlePressOut}
-            isPressed={isPressed}
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
-            selectedItem={selectedItem}
-            setSelectedItem={setSelectedItem}
-            onCancelModal={onCancelModal}
-            onDeleteModal={onDeleteModal}
-            openModal={openModal}
-            onChangeText={onChangeText} />
-          : <DeletedItemsPage 
-            handleDeletedScreen={handleDeletedScreen}
-            deletedItems={deletedItems}
-            openModal={openModal} 
-            modalVisible={modalVisible} 
-            selectedItem={selectedItem}
-            onCancelModal={onCancelModal}
-            onDeleteModal={onDeleteModal} />
-        } */}
-        <AppNavigator/>
+      <AppNavigator/>
     </>
   );
 }
