@@ -6,7 +6,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Logo from "../components/Logo/Logo";
-import {styles} from './styles';
 import { useFonts } from 'expo-font';
 
 SplashScreen.preventAutoHideAsync();
@@ -22,7 +21,7 @@ const DeletedItemsPage = ({
   
   return (
     <>
-      <View style={styles.screen}>
+      <View>
         {/* LIST COMPONENT */}
         <ItemList items={deletedItems} openModal={openModal} />      
         {/* MODAl COMPONENT */}

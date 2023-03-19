@@ -5,13 +5,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
- const HomeStack = () => {
+ const DeletedItemsNavigation = () => {
   return (
     <Stack.Navigator initialRouteName={StartPage}>
-        <Stack.Screen name="Home" component={StartPage} />
         <Stack.Screen name="DeletedItems" component={DeletedItemsPage} />
     </Stack.Navigator>
   );
 };
 
-export default HomeStack;
+export default DeletedItemsNavigation;
