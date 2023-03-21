@@ -91,7 +91,7 @@ const StartPage = () => {
         <ItemList items={items} openModal={openModal} />      
         {/* MODAl COMPONENT */}
         <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
-        <ButtonDeletedItems handleDeletedScreen={handleDeletedScreen} deletedScreen={deletedScreen}/>
+        {/* <ButtonDeletedItems handleDeletedScreen={handleDeletedScreen} deletedScreen={deletedScreen}/> */}
       </View>
     </>
   );

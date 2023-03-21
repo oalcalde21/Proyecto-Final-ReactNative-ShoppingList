@@ -1,13 +1,13 @@
 import * as Font from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-
-import React, { useCallback, useEffect, useState } from "react";
 
 import { ActivityIndicator } from 'react-native';
 import AppNavigator from './src/navigation';
+import React from "react";
 import { useFonts } from 'expo-font';
+// import * as SplashScreen from 'expo-splash-screen';
 
-SplashScreen.preventAutoHideAsync();
+
+// SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   
@@ -27,3 +27,4 @@ export default function App() {
     </>
   );
 }
+

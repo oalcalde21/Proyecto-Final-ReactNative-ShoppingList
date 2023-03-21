@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: "black",
     borderBottomWidth: 1,
     fontFamily: "Poppins-Regular",
+    left: 10,
   },
   button: {
     justifyContent: 'center',
@@ -22,6 +23,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#2296f3',
     transform: [{ scale: 1 }],
     transition: 'transform 0.2s',
+    right: 10,
   },
   buttonPressed: {
     transform: [{ scale: 1.1 }],

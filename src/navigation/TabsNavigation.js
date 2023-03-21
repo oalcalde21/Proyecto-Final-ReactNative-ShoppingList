@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
     shadowRadius: 0.25,
     elevation: 5,
     position: 'absolute',
-    bottom: 10,
-    left: 20,
+    width: '100%',
     right: 20,
-    borderRadius: 15,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
     height: 70,
   },
   tabBarIcon: {
