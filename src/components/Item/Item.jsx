@@ -17,7 +17,7 @@ const Item = ({ itemData, openModal }) => {
   return (
     <>
     <Pressable style={[styles.itemContainer, isPressed && styles.itemContainerGreen]} onPress={handlePress}>
-      <Text style={styles.item}>{itemData.item.value}</Text>
+      <Text style={styles.item}>{itemData.item.name}</Text>
     </Pressable>
     </>
   );

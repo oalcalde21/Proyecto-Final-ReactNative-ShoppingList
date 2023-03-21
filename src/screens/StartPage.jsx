@@ -2,6 +2,8 @@ import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHe
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
+import { DELETEDITEMS } from '../data/deletedItems';
+import { ITEMS } from '../data/items';
 import Logo from "../components/Logo/Logo";
 
 const StartPage = () => {
@@ -35,7 +37,7 @@ const StartPage = () => {
         "addItemToState - start CON JSON",
         JSON.stringify({ items, itemText })
       );
-      const newArr = [...items, { id: Date.now(), value: itemText }];
+      const newArr = [...ITEMS, { id: Date.now(), name: itemText }];
       setItems(newArr);
       setItemText("");
       console.log("addItemToState - end", "items", newArr);
@@ -48,7 +50,7 @@ const StartPage = () => {
         "addDeleteItemToState - start CON JSON",
         JSON.stringify({ items, itemText })
       );
-        const newArr = [...deletedItems, { id: Date.now(), value: item.value }];
+        const newArr = [...DELETEDITEMS, { id: Date.now(), name: item.name }];
         setDeletedItems(newArr);
         console.log("addDeletedItemToState - end", "items", newArr);
         console.log(deletedScreen)
@@ -65,7 +67,7 @@ const StartPage = () => {
   
     const onDeleteModal = (id, item) => {
       setModalVisible(!modalVisible);
-      setItems((oldArry) => oldArry.filter((item) => item.id !== id));
+      setItems((ITEMS) => ITEMS.filter((item) => item.id !== id));
       addDeletedItemToState(item);
       setSelectedItem(null);
     };
@@ -88,7 +90,7 @@ const StartPage = () => {
         <NewItemHeader onChangeText={onChangeText} itemText={itemText} addItemToState={addItemToState} onPressIn={handlePressIn} OnPressOut={handlePressOut} isPressed={isPressed}/>
         {/* LIST COMPONENT */}
         <ItemStatusColor/>
-        <ItemList items={items} openModal={openModal} />      
+        <ItemList items={ITEMS} openModal={openModal} />      
         {/* MODAl COMPONENT */}
         <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
         {/* <ButtonDeletedItems handleDeletedScreen={handleDeletedScreen} deletedScreen={deletedScreen}/> */}

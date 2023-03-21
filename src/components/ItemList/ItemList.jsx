@@ -5,6 +5,7 @@ import React from "react";
 import {styles} from './styles'
 
 const ItemList = ({ items, openModal }) => {
+  
   return (
     <>
     <FlatList data={items} style={styles.container} renderItem={(itemData) => {
