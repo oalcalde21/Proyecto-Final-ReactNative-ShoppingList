@@ -7,9 +7,10 @@ export const addItem = (itemText) => ({
   text: itemText,
 });
 
-export const deleteItem = (itemId) => ({
+export const deleteItem = (itemId, item) => ({
     type: DELETE_ITEM,
     id: itemId,
+    item: item,
 });
 
 export const selectItem = (selectedItem) => ({

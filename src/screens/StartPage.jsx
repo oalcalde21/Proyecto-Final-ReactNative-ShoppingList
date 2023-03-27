@@ -36,32 +36,12 @@ const StartPage = () => {
     }, []);
     
     const addItemToState = () => {
-      // console.log("addItemToState - start SIN JSON", itemsState, itemText);
-      // console.log(
-      //   "addItemToState - start CON JSON",
-      //   JSON.stringify({ itemsState, itemText })
-      // );
-      // const newArr = [...itemsState, { id: Date.now(), name: itemText }];
-      // setItems(newArr);
-      // setItemText("");
-      // console.log("addItemToState - end", "items", newArr);
-      console.log(itemText);
-      console.log(typeof(itemText));
       dispatch(addItem(itemText));
-      console.log(itemsState);
     };
     
   
-    const addDeletedItemToState = (item) => {
-      console.log("addItemToState - start SIN JSON", itemsState, itemText);
-      console.log(
-        "addDeleteItemToState - start CON JSON",
-        JSON.stringify({ itemsState, itemText })
-      );
-        const newArr = [...deletedItems, { id: Date.now(), name: item.name }];
-        setDeletedItems(newArr);
-        console.log("addDeletedItemToState - end", "items", newArr);
-        console.log(deletedScreen)
+    const addDeletedItemToState = (id, item) => {
+        dispatch(deleteItem(id, item));
     };
     
     const openModal = (item) => {
@@ -75,9 +55,7 @@ const StartPage = () => {
   
     const onDeleteModal = (id, item) => {
       setModalVisible(!modalVisible);
-      setItems((deletedItems) => items.filter((item) => item.id !== id));
-      addDeletedItemToState(item);
-      setSelectedItem(null);
+      addDeletedItemToState(id, item);
     };
   
     const [isPressed, setIsPressed] = useState(false);
