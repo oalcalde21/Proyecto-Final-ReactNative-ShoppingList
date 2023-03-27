@@ -1,18 +1,19 @@
-export const ADD_ITEM = "ADD_ITEM";
-export const DELETE_ITEM = "DELETE_ITEM";
-export const SELECT_ITEM = "SELECT_ITEM";
+export const ADD_DELETED_ITEM = "ADD_DELETED_ITEM";
+export const DELETE_DELETED_ITEM = "DELETE_DELETED_ITEM";
+export const SELECT_DELETED_ITEM = "SELECT_DELETED_ITEM";
 
-export const addItem = (itemText) => ({
-  type: ADD_ITEM,
-  text: itemText,
+export const addDeletedItem = (item) => ({
+  type: ADD_DELETED_ITEM,
+  item: item,
 });
 
-export const deleteItem = (itemId) => ({
-    type: DELETE_ITEM,
+export const deleteDeletedItem = (itemId, item) => ({
+    type: DELETE_DELETED_ITEM,
     id: itemId,
+    item: item,
 });
 
-export const selectItem = (selectedItem) => ({
-    type: SELECT_ITEM,
+export const selectDeletedItem = (selectedItem) => ({
+    type: SELECT_DELETED_ITEM,
     item: selectedItem,
 });

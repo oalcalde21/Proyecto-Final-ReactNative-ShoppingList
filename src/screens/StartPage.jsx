@@ -1,6 +1,7 @@
 import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { addDeletedItem, deleteDeletedItem } from "../store/actions/DeleteItemsPage.action";
 import { addItem, deleteItem } from "../store/actions/StartPage.action";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -42,6 +43,7 @@ const StartPage = () => {
   
     const addDeletedItemToState = (id, item) => {
         dispatch(deleteItem(id, item));
+        dispatch(addDeletedItem(item));
     };
     
     const openModal = (item) => {

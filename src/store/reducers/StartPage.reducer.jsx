@@ -10,7 +10,6 @@ const initialState = {
 const itemReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_ITEM":
-            console.log(action.itemText)
             const newArr = [...state.items, { id: Date.now(), name: action.text }];
             return {
                 ...state,
@@ -18,7 +17,6 @@ const itemReducer = (state = initialState, action) => {
             };
         case "DELETE_ITEM":
             const filteredItems = state.items.filter((item) => item.id !== action.id);
-            console.log(filteredItems);
             return {
                 ...state,
                 items: filteredItems,

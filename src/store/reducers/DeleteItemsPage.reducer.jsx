@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM, SELECT_ITEM } from "../actions/DeleteItemsPage.action";
+import { ADD_DELETED_ITEM, DELETE_DELETED_ITEM, SELECT_DELETED_ITEM } from "../actions/DeleteItemsPage.action";
 
 import { DELETEDITEMS } from "../../data/deletedItems";
 
@@ -10,7 +10,7 @@ const initialState = {
 const deletedItemReducer = (state = initialState, action) => { 
     switch (action.type) {
         case "ADD_DELETED_ITEM":
-            const newArr = [...state.deletedItems, { id: Date.now(), name: action.itemName }];
+            const newArr = [...state.deletedItems, { id: action.item.id, name: action.item.name }];
             return {
                 ...state,
                 deletedItems: newArr,
