@@ -1,6 +1,7 @@
 import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { addItem, deleteItem } from "../store/actions/StartPage.action";
 import { useDispatch, useSelector } from "react-redux";
 
 import Logo from "../components/Logo/Logo";
@@ -13,9 +14,10 @@ const StartPage = () => {
     const [items, setItems] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
+    
     const itemsState = useSelector(state => state.startPage.items);
+    const dispatch = useDispatch();
 
-    console.log("itemsState", itemsState);
 
     const handleDeletedScreen = () => {
       if (deletedScreen === false) {
@@ -34,15 +36,19 @@ const StartPage = () => {
     }, []);
     
     const addItemToState = () => {
-      console.log("addItemToState - start SIN JSON", itemsState, itemText);
-      console.log(
-        "addItemToState - start CON JSON",
-        JSON.stringify({ itemsState, itemText })
-      );
-      const newArr = [...itemsState, { id: Date.now(), name: itemText }];
-      setItems(newArr);
-      setItemText("");
-      console.log("addItemToState - end", "items", newArr);
+      // console.log("addItemToState - start SIN JSON", itemsState, itemText);
+      // console.log(
+      //   "addItemToState - start CON JSON",
+      //   JSON.stringify({ itemsState, itemText })
+      // );
+      // const newArr = [...itemsState, { id: Date.now(), name: itemText }];
+      // setItems(newArr);
+      // setItemText("");
+      // console.log("addItemToState - end", "items", newArr);
+      console.log(itemText);
+      console.log(typeof(itemText));
+      dispatch(addItem(itemText));
+      console.log(itemsState);
     };
     
   

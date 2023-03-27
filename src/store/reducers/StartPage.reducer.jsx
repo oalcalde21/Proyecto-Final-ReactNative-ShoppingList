@@ -10,6 +10,7 @@ const initialState = {
 const itemReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_ITEM":
+            console.log(action.itemText)
             const newArr = [...state.items, { id: Date.now(), name: action.itemText }];
             return {
                 ...state,
