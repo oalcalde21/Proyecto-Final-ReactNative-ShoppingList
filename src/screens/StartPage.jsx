@@ -73,7 +73,7 @@ const StartPage = () => {
 
   return (
     <>
-      <View>
+      <View style={[styles.home]}> 
         <Logo/>
         {/* ADDITEM COMPONENT */}
         <NewItemHeader onChangeText={onChangeText} itemText={itemText} addItemToState={addItemToState} onPressIn={handlePressIn} OnPressOut={handlePressOut} isPressed={isPressed}/>
@@ -88,3 +88,10 @@ const StartPage = () => {
 }
 
 export default StartPage
+
+const styles = StyleSheet.create({
+  home: {
+    backgroundColor: '#FFFFFF',
+    height: '100%',
+  },
+})

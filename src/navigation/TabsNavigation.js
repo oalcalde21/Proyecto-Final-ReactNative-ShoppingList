@@ -6,7 +6,7 @@ import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import HomeNavigation from './HomeNavigation';
 import { Ionicons } from '@expo/vector-icons';
-import ListHistoryNavigation from './ListHistory';
+import ListHistoryNavigation from './ListHistoryNavigation';
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -19,8 +19,8 @@ const TabsNavigaton = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
-              <AntDesign name="home" size={24} style={{ color: focused ? '#008000' : '#748C94' }} />
-              <Text style={{ color: focused ? '#008000' : '#748C94' }}>Home</Text>
+              <AntDesign name="home" size={24} style={{ color: focused ? '#FFF' : '#9FBFB2' }} />
+              <Text style={{ color: focused ? '#FFF' : '#9FBFB2' }}>Home</Text>
             </View>
           )
         }}
@@ -30,8 +30,8 @@ const TabsNavigaton = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
-              <FontAwesome5 name="clipboard-list" size={24} color={focused ? '#008000' : '#748C94'} />
-              <Text style={{ color: focused ? '#008000' : '#748C94' }}>Purchased Items</Text>
+              <FontAwesome5 name="clipboard-list" size={24} color={focused ? '#FFF' : '#9FBFB2'} />
+              <Text style={{ color: focused ? '#FFF' : '#9FBFB2' }}>Purchased Items</Text>
             </View>
           )
         }}
@@ -40,8 +40,8 @@ const TabsNavigaton = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
-              <FontAwesome5 name="history" size={24} color={focused ? '#008000' : '#748C94'} />
-              <Text style={{ color: focused ? '#008000' : '#748C94' }}>List History</Text>
+              <FontAwesome5 name="history" size={24} color={focused ? '#FFF' : '#9FBFB2'} />
+              <Text style={{ color: focused ? '#FFF' : '#9FBFB2' }}>List History</Text>
             </View>
           )
         }}
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     height: 70,
+    backgroundColor: '#21B568'
   },
   tabBarIcon: {
     flex: 1,

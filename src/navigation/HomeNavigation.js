@@ -7,7 +7,13 @@ const Stack = createNativeStackNavigator();
 
  const HomeNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={StartPage}>
+    <Stack.Navigator initialRouteName={StartPage}  
+      screenOptions={{
+        headerStyle: { backgroundColor: '#21B568' },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    >
         <Stack.Screen name="Home" component={StartPage} />
     </Stack.Navigator>
   );
