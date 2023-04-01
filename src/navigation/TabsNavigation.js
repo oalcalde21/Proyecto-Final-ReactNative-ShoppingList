@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 
 import { AntDesign } from '@expo/vector-icons';
-import DeletedItemsNavigation from './DeletedItemsNavigation';
+import DeletedItemsNavigation from './PurchasedItemsNavigation';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import HomeNavigation from './HomeNavigation';
 import { Ionicons } from '@expo/vector-icons';
+import ListHistoryNavigation from './ListHistory';
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -25,17 +26,27 @@ const TabsNavigaton = () => {
         }}
 
       />
-      <BottomTabs.Screen name="DeletedItems-tab" component={DeletedItemsNavigation}
+      <BottomTabs.Screen name="PurchasedItems-tab" component={DeletedItemsNavigation}
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabBarIcon}>
               <FontAwesome5 name="clipboard-list" size={24} color={focused ? '#008000' : '#748C94'} />
-              <Text style={{ color: focused ? '#008000' : '#748C94' }}>Deleted Items</Text>
+              <Text style={{ color: focused ? '#008000' : '#748C94' }}>Purchased Items</Text>
             </View>
           )
         }}
       />
-    </BottomTabs.Navigator>
+      <BottomTabs.Screen name="ListHistory-tab" component={ListHistoryNavigation}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.tabBarIcon}>
+              <FontAwesome5 name="history" size={24} color={focused ? '#008000' : '#748C94'} />
+              <Text style={{ color: focused ? '#008000' : '#748C94' }}>List History</Text>
+            </View>
+          )
+        }}
+      />
+    </BottomTabs.Navigator>    
   )
 }
 

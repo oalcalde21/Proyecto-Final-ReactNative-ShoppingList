@@ -13,6 +13,7 @@ const ItemList = ({ items, openModal }) => {
       }}
       keyExtractor={(item) => item.id.toString()}
       nestedScrollEnabled={true}
+      contentContainerStyle={{ alignItems: 'center', justifyContent: 'center' }}
     />
     </>
   );

@@ -9,8 +9,8 @@ import Logo from "../components/Logo/Logo";
 
 const StartPage = () => {
 
-    const [deletedScreen, setDeletedScreen] = useState(false);
-    const [deletedItems, setDeletedItems] = useState([]);
+    const [purchasedScreen, setPurchasedScreen] = useState(false);
+    const [purchasedItems, setPurchasedItems] = useState([]);
     const [itemText, setItemText] = useState("");
     const [items, setItems] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
@@ -20,8 +20,8 @@ const StartPage = () => {
     const dispatch = useDispatch();
 
 
-    const handleDeletedScreen = () => {
-      if (deletedScreen === false) {
+    const handlePurchasedScreen = () => {
+      if (purchasedScreen === false) {
         setDeletedScreen(true);
       } else {
         setDeletedScreen(false);
@@ -82,7 +82,6 @@ const StartPage = () => {
         <ItemList items={itemsState} openModal={openModal} />      
         {/* MODAl COMPONENT */}
         <Modal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
-        {/* <ButtonDeletedItems handleDeletedScreen={handleDeletedScreen} deletedScreen={deletedScreen}/> */}
       </View>
     </>
   );
