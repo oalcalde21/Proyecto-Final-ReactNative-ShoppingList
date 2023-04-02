@@ -1,6 +1,6 @@
 import { API_URL } from '../../constants/Database';
 
-export const GET_ORDERS = 'GET_HISTORY';
+export const GET_HISTORY = 'GET_HISTORY';
 
 export const getOrders = () => {
     return async dispatch => {

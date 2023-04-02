@@ -9,10 +9,26 @@ const initialState = {
 
 const deletedItemReducer = (state = initialState, action) => { 
     switch (action.type) {
-        case GET_ORDERS:
+        case "ADD_DELETED_ITEM":
+            const newArr = [...state.deletedItems, { id: action.item.id, name: action.item.name }];
             return {
                 ...state,
-                list: action.orders
+                deletedItems: newArr,
+            };
+        case "DELETE_DELETED_ITEM":
+            const filteredItems = state.deletedItems.filter((item) => item.id !== action.itemId);
+            return {
+                ...state,
+                deletedItems: filteredItems,
+            };
+        case "SELECT_DELETED_ITEM":
+            return {
+                ...state,
+                selectedItem: action.selectedItem,
+            };
+        case CONFIRM_LIST:
+            return {
+                ...state,
             }
         default:
             return state;

@@ -24,28 +24,28 @@ export const selectDeletedItem = (selectedItem) => ({
 export const sendList =(list) => {
     console.log("Prueba")
     console.log(list);
-  return async dispatch => {
-      try {
-          
-          const response = await fetch(API_URL+'lists.json', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                  date: new Date(),
-                  list: list
-              }),
-          });
+    return async dispatch => {
+        try {
+            
+            const response = await fetch(API_URL+'lists.json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    date: new Date(),
+                    list: list
+                }),
+            });
 
-          const result = await response.json();
-          console.log(result);
-          dispatch({
-              type: CONFIRM_LIST,
-              confirm: true
-          });
-      } catch (error) {
-          console.error(error)
-      }
+            const result = await response.json();
+            console.log(result);
+            dispatch({
+                type: CONFIRM_LIST,
+                confirm: true
+            });
+        } catch (error) {
+            console.error(error)
+        }
   }
 }
