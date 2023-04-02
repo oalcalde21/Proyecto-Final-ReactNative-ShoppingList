@@ -9,7 +9,7 @@ const historyLoaderReducer = (state = INITIAL_STATE, action) => {
         case GET_HISTORY:
             return {
                 ...state,
-                list: action.orders
+                list: action.history
             }
         default:
             return state;

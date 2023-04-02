@@ -5,7 +5,7 @@ export const GET_HISTORY = 'GET_HISTORY';
 export const getOrders = () => {
     return async dispatch => {
         try {
-            const response = await fetch(`${API_URL}/orders.json`,{
+            const response = await fetch(`${API_URL}/lists.json`,{
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ export const getOrders = () => {
             });
             dispatch({
                 type: GET_HISTORY,
-                orders
+                history
             });
         } catch (error) {
             console.log(error);
