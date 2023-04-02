@@ -1,4 +1,4 @@
-import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
+import { ButtonDeletedItems, Footer, Input, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { addDeletedItem, deleteDeletedItem } from "../store/actions/DeleteItemsPage.action";

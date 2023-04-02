@@ -1,6 +1,7 @@
 import ButtonDeletedItems from "./ButtonDeletedItems/ButtonDeletedItems";
 import ButtonHome from "./ButtonHome/ButtonHome";
 import Footer from "./Footer/Footer";
+import Input from "./Input/Input";
 import ItemList from "./ItemList/ItemList";
 import ItemStatusColor from "./ItemStatusColor/ItemStatusColor";
 import Modal from "./Modal/Modal";
@@ -14,4 +15,5 @@ export {
     Footer,
     ButtonDeletedItems,
     ButtonHome,
+    Input,
 }

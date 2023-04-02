@@ -1,1 +1,2 @@
 export const API_URL = 'https://shoppinglist-383b4-default-rtdb.firebaseio.com';
+export const SIGN_UP_URL = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB3gl7TKjDW_d_5R3FwDwXY8EbJ76BPVJk';
