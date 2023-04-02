@@ -1,1 +1,1 @@
-export const API_URL = 'https://shoppinglist-383b4-default-rtdb.firebaseio.com'
+export const API_URL = 'https://shoppinglist-383b4-default-rtdb.firebaseio.com';

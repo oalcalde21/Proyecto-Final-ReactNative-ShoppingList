@@ -1,4 +1,4 @@
-import { ADD_DELETED_ITEM, DELETE_DELETED_ITEM, SELECT_DELETED_ITEM } from "../actions/DeleteItemsPage.action";
+import { ADD_DELETED_ITEM, CONFIRM_LIST, DELETE_DELETED_ITEM, SELECT_DELETED_ITEM } from "../actions/DeleteItemsPage.action";
 
 import { DELETEDITEMS } from "../../data/deletedItems";
 
@@ -26,6 +26,10 @@ const deletedItemReducer = (state = initialState, action) => {
                 ...state,
                 selectedItem: action.selectedItem,
             };
+        case CONFIRM_LIST:
+            return {
+                ...state,
+            }
         default:
             return state;
     }
