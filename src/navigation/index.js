@@ -8,7 +8,7 @@ import TabsNavigation from "./TabsNavigation";
 
 const AppNavigator = () => {
 
-  const isAuth = useSelector(state => state.auth.userId);
+  const isAuth = useSelector(state => state.logIn.userId);
   
   return (
     <NavigationContainer>

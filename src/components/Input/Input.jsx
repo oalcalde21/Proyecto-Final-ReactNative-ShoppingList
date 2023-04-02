@@ -1,8 +1,11 @@
 import React, { useReducer } from 'react'
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 
+import {styles} from './styles'
+
 const INPUT_CHANGE = "INPUT_CHANGE";
 const INPUT_BLUR = "INPUT_BLUR";
+
 
 const inputReducer = (state, action) => {
     switch (action.type) {

@@ -34,7 +34,7 @@ const formReducer = (state, action) => {
 
 const LogInScreen = () => {
     const dispatch = useDispatch();
-    const isAuthLoading = useSelector(state => state.auth.isLoading);
+    const isAuthLoading = useSelector(state => state.logIn.isLoading);
 
     const [formState, dispatchFormState] = React.useReducer(formReducer, {
         inputValues: {
@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 24,
-        fontFamily: 'OpenSans_700Bold',
         marginBottom: 12,
         textAlign: 'center',
     },
@@ -145,7 +144,6 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 16,
-        fontFamily: 'OpenSans_700Bold'
     },
     textInput: {
         width: '100%',
@@ -163,7 +161,6 @@ const styles = StyleSheet.create({
     },
     loginButtonText: {
         fontSize: 18,
-        fontFamily: 'OpenSans_700Bold',
         textAlign: 'center',
         color: '#fff',
     },
@@ -172,12 +169,10 @@ const styles = StyleSheet.create({
     },
     promptMessage: {
         fontSize: 16,
-        fontFamily: 'OpenSans_400Regular',
         color: '#333',
     },
     promptButton: {
         fontSize: 16,
-        fontFamily: 'OpenSans_700Bold',
         color: colors.primary
     },
     button: {

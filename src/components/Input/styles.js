@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
         width: '100%'
     },
     label: {
-        fontFamily: 'OpenSans_700Bold',
         marginVertical: 8
     },
     input: {
@@ -18,7 +17,6 @@ export const styles = StyleSheet.create({
         marginVertical: 5
     },
     errorText: {
-        fontFamily: 'OpenSans_700Bold',
         color: 'red',
     }
 })
