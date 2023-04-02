@@ -22,6 +22,8 @@ export const selectDeletedItem = (selectedItem) => ({
 });
 
 export const sendList =(list) => {
+    console.log("Prueba")
+    console.log(list);
   return async dispatch => {
       try {
           
