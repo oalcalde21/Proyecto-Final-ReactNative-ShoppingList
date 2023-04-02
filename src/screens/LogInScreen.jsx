@@ -1,7 +1,8 @@
 import { ButtonDeletedItems, Footer, Input, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, LogBox, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
+import Logo from "../components/Logo/Logo";
 import React from 'react'
 import colors from '../constants/Colors'
 import { signUp } from '../store/actions/LogIn.action'
@@ -50,10 +51,13 @@ const LogInScreen = () => {
 
 
     const onHandleRegister = () => {
+        console.log(formState.inputValues.email)
+        console.log(formState.inputValues.password)
+        console.log(formState)
         if (!formState.formIsValid) {
             dispatch(signUp(email, password))
         } else {
-            alert('Por favor, ingrese un email y una contraseña válidos')
+            alert('Please, enter a valid email and password')
         }
     }
 
@@ -68,8 +72,9 @@ const LogInScreen = () => {
 
     return (
         <KeyboardAvoidingView style={styles.screen} behavior="padding">
+            <Logo/>
             <View style={styles.container}>
-                <Text style={styles.title}>REGISTRO</Text>
+                <Text style={styles.title}>Register Account</Text>
                 <View style={styles.form}>
                     <Input
                         initialValue={formState.inputValues.email}
@@ -80,7 +85,7 @@ const LogInScreen = () => {
                         email
                         minLength={5}
                         label='Email'
-                        errorText='Por favor, ingrese un email válido'
+                        errorText='Please, enter a valid email'
                         autoCapitalize='none'
                         keyboardType='email-address'
                     />
@@ -92,21 +97,21 @@ const LogInScreen = () => {
                         required
                         minLength={5}
                         label='Password'
-                        errorText='Por favor, ingrese un password válido'
+                        errorText='Please, enter a valid password'
                         autoCapitalize='none'
                         keyboardType='email-address'
                         secureTextEntry
                     />
                     <TouchableOpacity style={styles.loginButton} onPress={onHandleRegister}>
-                        <Text style={styles.loginButtonText}>{isAuthLoading ? 'Loading...' : 'Registrarse'}</Text>
+                        <Text style={styles.loginButtonText}>{isAuthLoading ? 'Loading...' : 'Sign In'}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.prompt}>
                     <Text style={styles.promptMessage}>
-                        ¿Ya tienes una cuenta?
+                        ¿Do you have an account?
                     </Text>
                     <TouchableOpacity>
-                        <Text style={styles.promptButton}>Iniciar sesión</Text>
+                        <Text style={styles.promptButton}>Log in</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -156,7 +161,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         height: 40,
-        backgroundColor: colors.primary,
+        backgroundColor: "#0ac45d",
         marginVertical: 12,
     },
     loginButtonText: {
