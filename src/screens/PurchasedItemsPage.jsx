@@ -13,7 +13,7 @@ const dispatch = useDispatch();
 
   return (
     <>
-      <View>
+      <View style={[styles.home]}>
         <Logo/>
         <ItemList items={deletedItemsState}/>      
       </View>
@@ -22,3 +22,10 @@ const dispatch = useDispatch();
 }
 
 export default DeletedItemsPage
+
+const styles = StyleSheet.create({
+  home: {
+    backgroundColor: '#FFFFFF',
+    height: '100%',
+  },
+})

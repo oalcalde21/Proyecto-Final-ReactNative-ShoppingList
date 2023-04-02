@@ -8,9 +8,9 @@ const ItemStatusColor = () => {
     <>
     <View style={styles.container}>
         <View style={styles.redContainer}/>
-        <Text style={styles.text}>Pendiente</Text>
+        <Text style={styles.text}>Pending</Text>
         <View style={styles.greenContainer}/>
-        <Text style={styles.text}>Listo</Text>
+        <Text style={styles.text}>Ready</Text>
     </View>
     </>
   );

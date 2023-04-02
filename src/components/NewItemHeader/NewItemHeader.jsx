@@ -19,9 +19,9 @@ const NewItemHeader = ({onChangeText, itemText, addItemToState, inputPlaceHolder
   return (
     <>
     <View style={styles.addItemInputContainer}>
-      <TextInput placeholder="Ingrese un item" style={styles.input} onChangeText={onChangeText} value={itemText} blurOnSubmit={false} returnKeyType="done" onSubmitEditing={handleAddItem}/>
+      <TextInput placeholder="Add an item" style={styles.input} onChangeText={onChangeText} value={itemText} blurOnSubmit={false} returnKeyType="done" onSubmitEditing={handleAddItem}/>
       <TouchableOpacity style={[styles.button, isPressed && styles.buttonPressed, isButtonDisabled && styles.buttonDisabled]} onPress={addItemToState} onPressIn={onPressIn} onPressOut={OnPressOut} disabled={isButtonDisabled}>
-          <Text style={styles.text}>Agregar</Text>
+          <Text style={styles.text}>Add</Text>
         </TouchableOpacity>
     </View>
     </>

@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    width: 200,
+    width: 240,
     borderBottomColor: "black",
     borderBottomWidth: 1,
     fontFamily: "Poppins-Regular",
@@ -24,6 +24,8 @@ export const styles = StyleSheet.create({
     transform: [{ scale: 1 }],
     transition: 'transform 0.2s',
     right: 10,
+    width: 120,
+    alignItems: 'center',
   },
   buttonPressed: {
     transform: [{ scale: 1.1 }],

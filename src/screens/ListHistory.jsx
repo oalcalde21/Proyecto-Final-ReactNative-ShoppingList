@@ -4,10 +4,17 @@ import React from 'react'
 
 const ListHistory = () => {
   return (
-    <View>
+    <View style={[styles.home]}>
       <Text>ListHistory</Text>
     </View>
   )
 }
 
 export default ListHistory
+
+const styles = StyleSheet.create({
+  home: {
+    backgroundColor: '#FFFFFF',
+    height: '100%',
+  },
+})

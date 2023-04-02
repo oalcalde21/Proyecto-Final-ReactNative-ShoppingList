@@ -44,8 +44,15 @@ export const styles = StyleSheet.create({
 
   buttonCancel: {
     backgroundColor: Colors.Cancel,
+    width: 100,
+    alignItems: "center",
   },
   buttonDelete: {
     backgroundColor: Colors.Delete,
+    width: 100,
+    alignItems: "center",
+  },
+  text: {
+    color: 'white',
   },
   });

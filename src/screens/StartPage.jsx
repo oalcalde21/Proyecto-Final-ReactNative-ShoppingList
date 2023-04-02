@@ -38,6 +38,7 @@ const StartPage = () => {
     
     const addItemToState = () => {
       dispatch(addItem(itemText));
+      setItemText("");
     };
     
   

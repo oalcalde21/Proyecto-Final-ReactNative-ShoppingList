@@ -1,7 +1,7 @@
 export default {
-    Cancel: '#2196F3',
-    Delete: '#f44336',
-    Ready: 'green',
-    Pending: 'red',
+    Cancel: '#f44336',
+    Delete: '#2196F3',
+    Ready: '#0CEE72',
+    Pending: '#F13030',
     Background: '#fff',
 }
