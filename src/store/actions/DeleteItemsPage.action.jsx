@@ -3,7 +3,7 @@ import { API_URL } from '../../constants/Database';
 export const ADD_DELETED_ITEM = "ADD_DELETED_ITEM";
 export const DELETE_DELETED_ITEM = "DELETE_DELETED_ITEM";
 export const SELECT_DELETED_ITEM = "SELECT_DELETED_ITEM";
-export const CONFIRM_LIST = "CONFIRM_LIST";
+export const SEND_LIST = "SEND_LIST";
 
 export const addDeletedItem = (item) => ({
   type: ADD_DELETED_ITEM,
@@ -21,7 +21,7 @@ export const selectDeletedItem = (selectedItem) => ({
     item: selectedItem,
 });
 
-export const sendList =(list) => {
+export const sendList = (list) => {
     console.log("Prueba")
     console.log(list);
     return async dispatch => {
@@ -41,7 +41,7 @@ export const sendList =(list) => {
             const result = await response.json();
             console.log(result);
             dispatch({
-                type: CONFIRM_LIST,
+                type: SEND_LIST,
                 confirm: true
             });
         } catch (error) {

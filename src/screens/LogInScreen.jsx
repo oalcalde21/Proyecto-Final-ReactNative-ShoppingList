@@ -1,7 +1,8 @@
-import { ButtonDeletedItems, Footer, Input, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
+import { ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import { KeyboardAvoidingView, LogBox, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
+import Input from '../components/Input/Input'
 import Logo from "../components/Logo/Logo";
 import React from 'react'
 import colors from '../constants/Colors'
@@ -54,7 +55,7 @@ const LogInScreen = () => {
         console.log(formState.inputValues.email)
         console.log(formState.inputValues.password)
         console.log(formState)
-        if (!formState.formIsValid) {
+        if (formState.formIsValid) {
             dispatch(signUp(formState.inputValues.email, formState.inputValues.password))
         } else {
             alert('Please, enter a valid email and password')

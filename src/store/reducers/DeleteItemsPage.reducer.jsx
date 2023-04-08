@@ -26,7 +26,7 @@ const deletedItemReducer = (state = initialState, action) => {
                 ...state,
                 selectedItem: action.selectedItem,
             };
-        case CONFIRM_LIST:
+        case "SEND_LIST":
             return {
                 ...state,
             }
