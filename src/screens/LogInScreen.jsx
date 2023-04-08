@@ -55,7 +55,7 @@ const LogInScreen = () => {
         console.log(formState.inputValues.password)
         console.log(formState)
         if (!formState.formIsValid) {
-            dispatch(signUp(email, password))
+            dispatch(signUp(formState.inputValues.email, formState.inputValues.password))
         } else {
             alert('Please, enter a valid email and password')
         }
@@ -90,8 +90,8 @@ const LogInScreen = () => {
                         keyboardType='email-address'
                     />
                     <Input
-                        initialValue={formState.inputValues.email}
-                        initiallyValid={formState.inputValidities.email}
+                        initialValue={formState.inputValues.password}
+                        initiallyValid={formState.inputValidities.password}
                         onInputChange={handleChangedText}
                         id='password'
                         required
@@ -99,7 +99,7 @@ const LogInScreen = () => {
                         label='Password'
                         errorText='Please, enter a valid password'
                         autoCapitalize='none'
-                        keyboardType='email-address'
+                        keyboardType='default'
                         secureTextEntry
                     />
                     <TouchableOpacity style={styles.loginButton} onPress={onHandleRegister}>
