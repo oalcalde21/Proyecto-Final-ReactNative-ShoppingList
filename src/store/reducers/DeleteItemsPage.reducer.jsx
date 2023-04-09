@@ -1,4 +1,4 @@
-import { ADD_DELETED_ITEM, CONFIRM_LIST, DELETE_DELETED_ITEM, SELECT_DELETED_ITEM } from "../actions/DeleteItemsPage.action";
+import { ADD_DELETED_ITEM, ADD_LIST, CONFIRM_LIST, DELETE_DELETED_ITEM, SELECT_DELETED_ITEM } from "../actions/DeleteItemsPage.action";
 
 import { DELETEDITEMS } from "../../data/deletedItems";
 
@@ -29,6 +29,12 @@ const deletedItemReducer = (state = initialState, action) => {
         case "SEND_LIST":
             return {
                 ...state,
+            }
+        case ADD_LIST:
+            const newPlace = new Place(Date.now(), action.payload.list, action.payload.image)
+            return {
+                ...state,
+                places: state.places.concat(newPlace)
             }
         default:
             return state;

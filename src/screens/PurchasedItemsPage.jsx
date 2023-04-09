@@ -1,4 +1,4 @@
-import { Button, ButtonDeletedItems, Footer, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
+import { Button, ButtonDeletedItems, Footer, ImagePick, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import { addDeletedItem, deleteDeletedItem, sendList } from "../store/actions/DeleteItemsPage.action";
@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Logo from "../components/Logo/Logo";
 
 const DeletedItemsPage = () => {
+ 
+const [imageValue, setImageValue] = React.useState('')
   
 const purchasedItemsState = useSelector(state => state.deletedItemsPage.deletedItems);
 console.log(purchasedItemsState)
@@ -14,7 +16,7 @@ const dispatch = useDispatch();
 
 const onHandleSendList = ()=>{
   console.log(purchasedItemsState);
-  dispatch(sendList(purchasedItemsState)); 
+  dispatch(addList(purchasedItemsState, imageValue)); 
   console.log("List Sended");
 }
 const onHandleDeleteItem=(itemId)=>{
@@ -26,7 +28,10 @@ const onHandleDeleteItem=(itemId)=>{
     <>
       <View style={[styles.home]}>
         <Logo/>
-        <ItemList items={purchasedItemsState}/>
+        <ItemList style={styles.imgPick} items={purchasedItemsState}/>
+        <View style={styles.imgPick}>
+          <ImagePick onImage={image=>setImageValue(image)} />
+        </View>
         <View style={styles.buttonAlign}>
           <Pressable style={styles.button} onPress={onHandleSendList}>
             <Text style={styles.text}>Send List</Text>
@@ -51,7 +56,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 250,
     backgroundColor: "#2196F3",
-    bottom: -70,
+    bottom: 80,
   }, 
   buttonAlign: {
     justifyContent: "center",
@@ -62,5 +67,8 @@ const styles = StyleSheet.create({
     color: "#f0fbff",
     justifyContent: "center",
     alignItems: "center",
+  },
+  imgPick: {
+    bottom: 150,
   }
 })

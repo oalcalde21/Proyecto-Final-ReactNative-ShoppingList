@@ -4,6 +4,7 @@ export const ADD_DELETED_ITEM = "ADD_DELETED_ITEM";
 export const DELETE_DELETED_ITEM = "DELETE_DELETED_ITEM";
 export const SELECT_DELETED_ITEM = "SELECT_DELETED_ITEM";
 export const SEND_LIST = "SEND_LIST";
+export const ADD_LIST = 'ADD_LIST';
 
 export const addDeletedItem = (item) => ({
   type: ADD_DELETED_ITEM,
@@ -20,6 +21,8 @@ export const selectDeletedItem = (selectedItem) => ({
     type: SELECT_DELETED_ITEM,
     item: selectedItem,
 });
+
+
 
 export const sendList = (list) => {
     console.log("Prueba")
@@ -48,4 +51,25 @@ export const sendList = (list) => {
             console.error(error)
         }
   }
+}
+
+export const addList = (list, image) => {
+    //return { type: ADD_LIST, payload: {list}}
+    console.log(image)
+    return async dispatch => {
+        const fileName = image.split('/').pop()
+        const Path = FileSystem.documentDirectory + fileName
+
+        try {
+            FileSystem.moveAsync({
+                from: image,
+                to: Path
+            })
+        } catch (error) {
+            console.log(error.message)
+            throw error
+        }
+
+        dispatch({type: ADD_LIST, payload: {list, image: Path}})
+    }
 }

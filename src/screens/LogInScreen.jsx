@@ -71,6 +71,7 @@ const LogInScreen = () => {
         })
     }, [dispatchFormState])
 
+
     return (
         <KeyboardAvoidingView style={styles.screen} behavior="padding">
             <Logo/>
@@ -78,8 +79,8 @@ const LogInScreen = () => {
                 <Text style={styles.title}>Register Account</Text>
                 <View style={styles.form}>
                     <Input
-                        initialValue={formState.inputValues.email}
-                        initiallyValid={formState.inputValidities.email}
+                        value={formState.inputValues.email}
+                        isValid={formState.inputValidities.email}
                         onInputChange={handleChangedText}
                         id='email'
                         required
@@ -91,8 +92,8 @@ const LogInScreen = () => {
                         keyboardType='email-address'
                     />
                     <Input
-                        initialValue={formState.inputValues.password}
-                        initiallyValid={formState.inputValidities.password}
+                        value={formState.inputValues.password}
+                        isValid={formState.inputValidities.password}
                         onInputChange={handleChangedText}
                         id='password'
                         required
