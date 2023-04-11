@@ -1,10 +1,12 @@
 import { ADD_DELETED_ITEM, ADD_LIST, CONFIRM_LIST, DELETE_DELETED_ITEM, SELECT_DELETED_ITEM } from "../actions/DeleteItemsPage.action";
 
 import { DELETEDITEMS } from "../../data/deletedItems";
+import List from '../../models/List';
 
 const initialState = { 
     deletedItems: DELETEDITEMS,
     selectedItem: null,
+    list: [],
  };
 
 const deletedItemReducer = (state = initialState, action) => { 
@@ -31,10 +33,11 @@ const deletedItemReducer = (state = initialState, action) => {
                 ...state,
             }
         case ADD_LIST:
-            const newPlace = new Place(Date.now(), action.payload.list, action.payload.image)
+            const newList = new List(Date.now(), action.payload.list, action.payload.image)
+            console.log(state.list);
             return {
                 ...state,
-                places: state.places.concat(newPlace)
+                list: state.list.concat(newList)
             }
         default:
             return state;

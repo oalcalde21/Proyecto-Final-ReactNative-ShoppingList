@@ -1,3 +1,5 @@
+import * as FileSystem from 'expo-file-system'
+
 import { API_URL } from '../../constants/Database';
 
 export const ADD_DELETED_ITEM = "ADD_DELETED_ITEM";
@@ -58,18 +60,40 @@ export const addList = (list, image) => {
     console.log(image)
     return async dispatch => {
         const fileName = image.split('/').pop()
-        const Path = FileSystem.documentDirectory + fileName
+        // const Path = FileSystem.documentDirectory + fileName
 
+        // try {
+        //     FileSystem.moveAsync({
+        //         from: image,
+        //         to: Path
+        //     })
+        // } catch (error) {
+        //     console.log(error.message)
+        //     throw error
+        // }
         try {
-            FileSystem.moveAsync({
-                from: image,
-                to: Path
-            })
+            
+            const response = await fetch(API_URL+'lists.json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    date: new Date(),
+                    list: list + " " + image
+                }),
+            });
+
+            const result = await response.json();
+            console.log(result);
+            dispatch({
+                type: SEND_LIST,
+                confirm: true
+            });
         } catch (error) {
-            console.log(error.message)
-            throw error
+            console.error(error)
         }
 
-        dispatch({type: ADD_LIST, payload: {list, image: Path}})
+        dispatch({type: ADD_LIST, payload: {list, image: image}})
     }
 }

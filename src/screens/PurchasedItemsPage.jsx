@@ -1,7 +1,7 @@
 import { Button, ButtonDeletedItems, Footer, ImagePick, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
-import { addDeletedItem, deleteDeletedItem, sendList } from "../store/actions/DeleteItemsPage.action";
+import { addDeletedItem, addList, deleteDeletedItem, sendList } from "../store/actions/DeleteItemsPage.action";
 import { useDispatch, useSelector } from "react-redux";
 
 import Logo from "../components/Logo/Logo";
