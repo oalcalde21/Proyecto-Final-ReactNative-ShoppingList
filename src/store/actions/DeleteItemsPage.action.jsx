@@ -87,7 +87,7 @@ export const addList = (list, image) => {
             const result = await response.json();
             console.log(result);
             dispatch({
-                type: SEND_LIST,
+                type: ADD_LIST,
                 confirm: true
             });
         } catch (error) {
