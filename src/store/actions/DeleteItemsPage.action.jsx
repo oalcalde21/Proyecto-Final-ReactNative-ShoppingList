@@ -60,39 +60,39 @@ export const addList = (list, image) => {
     console.log(image)
     return async dispatch => {
         const fileName = image.split('/').pop()
-        // const Path = FileSystem.documentDirectory + fileName
+        const Path = FileSystem.documentDirectory + fileName
 
-        // try {
-        //     FileSystem.moveAsync({
-        //         from: image,
-        //         to: Path
-        //     })
-        // } catch (error) {
-        //     console.log(error.message)
-        //     throw error
-        // }
         try {
-            
-            const response = await fetch(API_URL+'lists.json', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    date: new Date(),
-                    list: list + " " + image
-                }),
-            });
-
-            const result = await response.json();
-            console.log(result);
-            dispatch({
-                type: ADD_LIST,
-                confirm: true
-            });
+            FileSystem.moveAsync({
+                from: image,
+                to: Path
+            })
         } catch (error) {
-            console.error(error)
+            console.log(error.message)
+            throw error
         }
+        // try {
+            
+        //     const response = await fetch(API_URL+'lists.json', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({
+        //             date: new Date(),
+        //             list: list + " " + image
+        //         }),
+        //     });
+
+        //     const result = await response.json();
+        //     console.log(result);
+        //     dispatch({
+        //         type: ADD_LIST,
+        //         confirm: true
+        //     });
+        // } catch (error) {
+        //     console.error(error)
+        // }
 
         dispatch({type: ADD_LIST, payload: {list, image: image}})
     }
