@@ -37,7 +37,7 @@ const deletedItemReducer = (state = initialState, action) => {
             console.log(action.payload.list);
             return {
                 ...state,
-                list: state.list.concat(newList)
+                list: state.list.concat(newList),
             }
         default:
             return state;

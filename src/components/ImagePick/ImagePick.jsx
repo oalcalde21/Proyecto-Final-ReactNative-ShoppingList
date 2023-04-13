@@ -42,7 +42,7 @@ const ImagePick = ({onImage}) => {
                 }
             </View>
             <Button
-                title="Tomar foto"
+                title="Add Invoice Photo"
                 color={"#CCC"}
                 onPress={handlerTakeImage}
             />

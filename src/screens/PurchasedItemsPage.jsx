@@ -18,6 +18,8 @@ const onHandleSendList = ()=>{
   console.log(purchasedItemsState);
   dispatch(addList(purchasedItemsState, imageValue)); 
   console.log("List Sended");
+  setImageValue(null);
+  
 }
 const onHandleDeleteItem=(itemId)=>{
   console.log("Elimina item");
