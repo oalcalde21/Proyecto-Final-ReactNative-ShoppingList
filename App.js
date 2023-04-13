@@ -1,15 +1,14 @@
 import * as Font from 'expo-font';
 
+import {store, storePersisted} from './src/store'
+
 import { ActivityIndicator } from 'react-native';
 import AppNavigator from './src/navigation';
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux';
 import React from "react";
 import { init } from './src/db';
-import store from './src/store';
 import { useFonts } from 'expo-font';
-
-import {store, storePersisted} from './src/s'
 
 init().then(
   () => {

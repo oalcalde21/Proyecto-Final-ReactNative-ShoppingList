@@ -33,8 +33,8 @@ const deletedItemReducer = (state = initialState, action) => {
                 ...state,
             }
         case ADD_LIST:
-            const newList = new List(Date.now(), action.payload.list, action.payload.image)
-            console.log(state.list);
+            const newList = new List(Date.now(), action.payload.list)
+            console.log(action.payload.list);
             return {
                 ...state,
                 list: state.list.concat(newList)

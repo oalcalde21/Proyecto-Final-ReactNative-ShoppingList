@@ -65,13 +65,18 @@ export const addList = (list, image) => {
         try {
             FileSystem.moveAsync({
                 from: image,
-                to: Path
+                to: Path,
             })
         } catch (error) {
             console.log(error.message)
             throw error
-        }
-        // try {
+        } 
+        const updatedList = { ...list, image: Path };
+        dispatch({type: ADD_LIST, payload: {list: updatedList}})
+    }
+}
+
+ // try {
             
         //     const response = await fetch(API_URL+'lists.json', {
         //         method: 'POST',
@@ -93,7 +98,3 @@ export const addList = (list, image) => {
         // } catch (error) {
         //     console.error(error)
         // }
-
-        dispatch({type: ADD_LIST, payload: {list, image: image}})
-    }
-}

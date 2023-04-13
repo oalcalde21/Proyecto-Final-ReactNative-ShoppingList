@@ -20,5 +20,7 @@ const RootReducer = combineReducers({
     logIn:logInReducer,
 });
 
-export default createStore(RootReducer, applyMiddleware(thunk));
+const persistedReducer = persistReducer(persistConfig, RootReducer)
+
+export const store = createStore(persistedReducer, applyMiddleware(thunk));
 export const storePersisted = persistStore(store);

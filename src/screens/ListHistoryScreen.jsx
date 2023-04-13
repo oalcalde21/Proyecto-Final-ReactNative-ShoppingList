@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Logo from "../components/Logo/Logo";
 
-const ListHistory = () => {
+const ListHistoryScreen = () => {
   
-  const itemsState = useSelector(state => state.startPage.items);
+  const itemsState = useSelector(state => state.deletedItemsPage.list);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   
@@ -38,7 +38,7 @@ const ListHistory = () => {
   )
 }
 
-export default ListHistory
+export default ListHistoryScreen
 
 const styles = StyleSheet.create({
   home: {
