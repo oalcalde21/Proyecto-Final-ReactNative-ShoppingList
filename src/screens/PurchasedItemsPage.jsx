@@ -1,4 +1,4 @@
-import { Button, ButtonDeletedItems, Footer, ImagePick, ItemList, ItemStatusColor, Modal, NewItemHeader } from "../components";
+import { Button, ButtonDeletedItems, Footer, ImagePick, ItemList, ItemStatusColor, Modal, NewItemHeader, PurchasedItem, PurchasedList } from "../components";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useCallback, useEffect, useState } from "react";
 import { addDeletedItem, addList, deleteDeletedItem, sendList } from "../store/actions/DeleteItemsPage.action";
@@ -17,9 +17,7 @@ const dispatch = useDispatch();
 const onHandleSendList = ()=>{
   console.log(purchasedItemsState);
   dispatch(addList(purchasedItemsState, imageValue)); 
-  console.log("List Sended");
-  setImageValue(null);
-  
+  console.log("List Sended");  
 }
 const onHandleDeleteItem=(itemId)=>{
   console.log("Elimina item");
@@ -30,7 +28,7 @@ const onHandleDeleteItem=(itemId)=>{
     <>
       <View style={[styles.home]}>
         <Logo/>
-        <ItemList style={styles.imgPick} items={purchasedItemsState}/>
+        <PurchasedList style={styles.imgPick} items={purchasedItemsState}/>
         <View style={styles.imgPick}>
           <ImagePick onImage={image=>setImageValue(image)} />
         </View>
@@ -58,7 +56,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 250,
     backgroundColor: "#2196F3",
-    bottom: 80,
+    bottom: -50,
   }, 
   buttonAlign: {
     justifyContent: "center",
@@ -71,6 +69,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imgPick: {
-    bottom: 150,
+    bottom: 10,
   }
 })

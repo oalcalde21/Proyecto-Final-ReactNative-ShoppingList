@@ -7,6 +7,8 @@ import ItemList from "./ItemList/ItemList";
 import ItemStatusColor from "./ItemStatusColor/ItemStatusColor";
 import Modal from "./Modal/Modal";
 import NewItemHeader from "./NewItemHeader/NewItemHeader";
+import PurchasedItem from "./PurchasedItem/PurchasedItem";
+import PurchasedList from "./PurchasedList/PurchasedList";
 
 export {
     NewItemHeader,
@@ -18,4 +20,6 @@ export {
     ButtonHome,
     Input,
     ImagePick,
+    PurchasedItem,
+    PurchasedList,
 }
