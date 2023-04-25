@@ -1,4 +1,4 @@
-import { ItemList, Modal, PurchasedItem, PurchasedList } from "../components";
+import { HistoryList, ItemList, Modal, PurchasedItem } from "../components";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, Text, View } from 'react-native'
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ const ListHistoryScreen = () => {
     <View style={[styles.home]}> 
         <Logo/>
         {/* LIST COMPONENT */}
-        <PurchasedList style={{height: '100%'}} items={itemsState}/>    
+        <HistoryList items={itemsState}/>
       </View>
   )
 }
