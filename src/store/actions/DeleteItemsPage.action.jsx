@@ -56,8 +56,6 @@ export const sendList = (list) => {
 }
 
 export const addList = (list, image) => {
-    //return { type: ADD_LIST, payload: {list}}
-    console.log(image)
     return async dispatch => {
         const fileName = image.split('/').pop()
         const Path = FileSystem.documentDirectory + fileName
