@@ -12,8 +12,8 @@ const HistoryModal = ({modalVisible, selectedItem, onCancelModal, onDeleteModal}
         <View style={styles.modalView}>
           <Text style={styles.modalTitle}>Item {selectedItem}</Text>
           <Text style={styles.modalText}>
-            Do you want to move this item{" "}
-            <Text style={styles.modalBoldText}>{selectedItem?.value}</Text>to the Purchased Item List?
+            Do you want to delete this item{" "}
+            <Text style={styles.modalBoldText}>{selectedItem?.value}</Text>from the History List?
           </Text>
           <View style={styles.modalActions}>
             <Button styleButtonType={styles.buttonCancel} title="Cancel" onPress={onCancelModal}/>

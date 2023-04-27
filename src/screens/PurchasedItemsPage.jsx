@@ -14,15 +14,20 @@ const purchasedItemsState = useSelector(state => state.deletedItemsPage.deletedI
 console.log(purchasedItemsState)
 const dispatch = useDispatch();
 
-const onHandleSendList = ()=>{
+const resetImageValue = useCallback(() => {
+  setImageValue('');
+}, []);
+
+useEffect(() => {
+  resetImageValue();
+}, [purchasedItemsState]);
+
+const onHandleSendList = () => {
   console.log(purchasedItemsState);
-  dispatch(addList(purchasedItemsState, imageValue)); 
-  console.log("List Sended");  
-}
-const onHandleDeleteItem=(itemId)=>{
-  console.log("Elimina item");
-  dispatch(removeItem(itemId))
-}
+  dispatch(addList(purchasedItemsState, imageValue))
+  resetImageValue();
+};
+
 
   return (
     <>
