@@ -5,12 +5,12 @@ import Item from "../Item/Item";
 import React from "react";
 import {styles} from './styles'
 
-const HistoryList = ({ items }) => {
+const HistoryList = ({ items, openModal }) => {
   
   return (
     <>
     <FlatList data={items} style={styles.container} renderItem={(itemData) => {
-        return <HistoryItem itemData={itemData}/>;
+        return <HistoryItem itemData={itemData} openModal={openModal}/>;
       }}
       keyExtractor={(item) => item.id.toString()}
       nestedScrollEnabled={true}

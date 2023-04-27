@@ -3,6 +3,7 @@ import ButtonHome from "./ButtonHome/ButtonHome";
 import Footer from "./Footer/Footer";
 import HistoryItem from "./HistoryItem/HistoryItem";
 import HistoryList from "./HistoryList/HistoryList";
+import HistoryModal from "./HistoryModal/HistoryModal";
 import ImagePick from "./ImagePick/ImagePick";
 import Input from "./Input/Input";
 import ItemList from "./ItemList/ItemList";
@@ -26,4 +27,5 @@ export {
     PurchasedList,
     HistoryList,
     HistoryItem,
+    HistoryModal,
 }
