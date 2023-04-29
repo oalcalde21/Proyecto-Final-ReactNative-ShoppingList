@@ -13,10 +13,8 @@ export const addDeletedItem = (item) => ({
   item: item,
 });
 
-export const deleteDeletedItem = (itemId, item) => ({
+export const deleteDeletedItem = () => ({
     type: DELETE_DELETED_ITEM,
-    id: itemId,
-    item: item,
 });
 
 export const selectDeletedItem = (selectedItem) => ({

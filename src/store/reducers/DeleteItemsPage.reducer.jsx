@@ -18,10 +18,9 @@ const deletedItemReducer = (state = initialState, action) => {
                 deletedItems: newArr,
             };
         case "DELETE_DELETED_ITEM":
-            const filteredItems = state.deletedItems.filter((item) => item.id !== action.itemId);
             return {
                 ...state,
-                deletedItems: filteredItems,
+                deletedItems: [],
             };
         case "SELECT_DELETED_ITEM":
             return {

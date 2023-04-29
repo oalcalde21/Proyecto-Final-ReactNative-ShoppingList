@@ -5,8 +5,7 @@ import React, { useState } from 'react'
 
 import {styles} from './styles'
 
-const ImagePick = ({onImage}) => {
-    const [pickedUri, setPickedUri] = useState()
+const ImagePick = ({pickedUri, setPickedUri}) => {
 
     const VerifyPermissions = async () => {
         const { status } = await ImagePicker.requestCameraPermissionsAsync()
@@ -30,7 +29,6 @@ const ImagePick = ({onImage}) => {
         })
         console.log(image.assets)
         setPickedUri(image.assets[0].uri)
-        onImage(image.assets[0].uri)
      }
 
     return (

@@ -8,18 +8,15 @@ import Logo from "../components/Logo/Logo";
 
 const DeletedItemsPage = () => {
  
-const [imageValue, setImageValue] = React.useState('')
+const [pickedUri, setPickedUri] = useState("")
   
 const purchasedItemsState = useSelector(state => state.deletedItemsPage.deletedItems);
 const dispatch = useDispatch();
 
-const ImgChangeHandler = () =>{
-  setImageValue(null)
-}
-
 const onHandleSendList = () => {
-  dispatch(addList(purchasedItemsState, imageValue))
-  ImgChangeHandler()
+  dispatch(addList(purchasedItemsState, pickedUri))
+  setPickedUri(null)
+  dispatch(deleteDeletedItem())
 };
 
 
@@ -29,7 +26,7 @@ const onHandleSendList = () => {
         <Logo/>
         <PurchasedList style={styles.imgPick} items={purchasedItemsState}/>
         <View style={styles.imgPick}>
-          <ImagePick onImage={image=>setImageValue(image)} />
+          <ImagePick pickedUri={pickedUri} setPickedUri={setPickedUri}/>
         </View>
         <View style={styles.buttonAlign}>
           <Pressable style={styles.button} onPress={onHandleSendList}>
