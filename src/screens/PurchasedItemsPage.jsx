@@ -11,21 +11,15 @@ const DeletedItemsPage = () => {
 const [imageValue, setImageValue] = React.useState('')
   
 const purchasedItemsState = useSelector(state => state.deletedItemsPage.deletedItems);
-console.log(purchasedItemsState)
 const dispatch = useDispatch();
 
-const resetImageValue = useCallback(() => {
-  setImageValue('');
-}, []);
-
-useEffect(() => {
-  resetImageValue();
-}, [purchasedItemsState]);
+const ImgChangeHandler = () =>{
+  setImageValue(null)
+}
 
 const onHandleSendList = () => {
-  console.log(purchasedItemsState);
   dispatch(addList(purchasedItemsState, imageValue))
-  resetImageValue();
+  ImgChangeHandler()
 };
 
 
