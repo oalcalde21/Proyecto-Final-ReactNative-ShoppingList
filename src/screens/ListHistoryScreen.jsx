@@ -32,7 +32,6 @@ const ListHistoryScreen = () => {
         <Logo/>
         {/* LIST COMPONENT */}
         <HistoryList items={itemsState} openModal={openModal}/>
-        <HistoryModal modalVisible={modalVisible} selectedItem={selectedItem} onCancelModal={onCancelModal} onDeleteModal={onDeleteModal}/>
       </View>
   )
 }

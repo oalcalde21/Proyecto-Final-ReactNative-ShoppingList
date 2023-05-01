@@ -12,6 +12,12 @@ const ItemStatusColor = () => {
         <View style={styles.greenContainer}/>
         <Text style={styles.text}>Ready</Text>
     </View>
+    <View style={styles.container}>
+        <Text style={styles.text}>1 clic to mark as ready</Text>
+    </View>
+    <View style={styles.container}>
+        <Text style={styles.text}>2 clics to move it to purchased items</Text>
+    </View>
     </>
   );
 };

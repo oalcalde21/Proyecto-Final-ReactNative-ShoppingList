@@ -51,6 +51,16 @@ const LogInScreen = () => {
     });
 
 
+    const handleChangedText = React.useCallback((inputIdentifier, inputValue, inputValidity) => {
+        dispatchFormState({
+            type: FORM_INPUT_UPDATE,
+            value: inputValue,
+            isValid: inputValidity,
+            input: inputIdentifier
+        })
+    }, [dispatchFormState])
+
+
     const onHandleRegister = () => {
         console.log(formState.inputValues.email)
         console.log(formState.inputValues.password)
@@ -61,16 +71,6 @@ const LogInScreen = () => {
             alert('Please, enter a valid email and password')
         }
     }
-
-    const handleChangedText = React.useCallback((inputIdentifier, inputValue, inputValidity) => {
-        dispatchFormState({
-            type: FORM_INPUT_UPDATE,
-            value: inputValue,
-            isValid: inputValidity,
-            input: inputIdentifier
-        })
-    }, [dispatchFormState])
-
 
     return (
         <KeyboardAvoidingView style={styles.screen} behavior="padding">
@@ -106,14 +106,6 @@ const LogInScreen = () => {
                     />
                     <TouchableOpacity style={styles.loginButton} onPress={onHandleRegister}>
                         <Text style={styles.loginButtonText}>{isAuthLoading ? 'Loading...' : 'Sign In'}</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.prompt}>
-                    <Text style={styles.promptMessage}>
-                        ¿Do you have an account?
-                    </Text>
-                    <TouchableOpacity>
-                        <Text style={styles.promptButton}>Log in</Text>
                     </TouchableOpacity>
                 </View>
             </View>
